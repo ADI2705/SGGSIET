@@ -1,0 +1,4 @@
+Django==5.0.1
+# Add other dependencies here, for example:
+# package1==version1
+# package2==version2
