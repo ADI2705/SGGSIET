@@ -27,9 +27,9 @@ Make sure you have the following installed:
 - Other dependencies (mention if any)
 
 ### Installation
-1. Clone the repository: `git clone https://github.com/ADI2705/SGGS_2024.git`
-2. `cd SGGS_2024`
-3. `pip install -r requirements.txt`
+1. Clone the repository: `git clone https://github.com/ADI2705/SGGSIET.git`
+2. `cd SGGSIET`
+3. `pip install django`
 4. `python manage.py migrate`
 5. `python manage.py runserver`
 
