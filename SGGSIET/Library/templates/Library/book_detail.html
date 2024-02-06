@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.title }} - Detail</title>
+    <!-- Add your stylesheets or styling here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav img {
+            height: 30px; /* Set the height of the logo */
+            width: auto; /* Allow the width to adjust proportionally */
+            margin-right: 10px; /* Add some spacing to the right of the logo */
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        h1 {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCwZM_vxzOQcUjaprLmz1rLa8XbJvbNjBVCg&usqp=CAU" alt="Logo" > <!-- Replace 'your_logo_url_here' with your logo URL -->
+    <h1>Book Issue Details</h1>
+</nav>
+
+<section>
+    <h2>Book Information</h2>
+    <p><strong>Title:</strong> {{ book.title }}</p>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Issue Date</th>
+                <th>Return Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for issue in book.bookissue_set.all %}
+                <tr>
+                    <td>{{ issue.student.name }}</td>
+                    <td>{{ issue.issue_date }}</td>
+                    <td>{{ issue.return_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+</body>
+</html>

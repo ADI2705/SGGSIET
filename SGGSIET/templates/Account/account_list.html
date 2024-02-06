@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account List</title>
+    <!-- Add your stylesheets or styling here -->
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Account List</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Student/Faculty Name</th>
+            <th>department</th>
+            <th>Fees Paid</th>
+            <th>Salary Paid</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for Account in Accounts %}
+            <tr>
+                <td>
+                    {% if Account.student %}
+                        {{ Account.student.name }}
+                    {% elif Account.Faculty %}
+                        {{ Account.Faculty.name }}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if Account.department %}
+                        {{ Account.department.name }}
+                    {% endif %}
+                </td>
+                <td>{% if Account.fees_paid %}Paid{% else %}Not Paid{% endif %}</td>
+                <td>{% if Account.salary_paid %}Paid{% else %}Not Paid{% endif %}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

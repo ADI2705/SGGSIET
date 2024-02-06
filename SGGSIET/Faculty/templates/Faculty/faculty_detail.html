@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Detail</title>
+    <!-- Add your stylesheets or styling here -->
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h1>{{ Faculty.name }} - Detail</h1>
+
+<p>UID: {{ Faculty.uid }}</p>
+<p>department: {{ Faculty.department.name }}</p>
+<p>Salary: {{ Faculty.salary }}</p>
+
+<h2>Attendance</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Present</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for att in attendance %}
+            <tr>
+                <td>{{ att.date }}</td>
+                <td>{% if att.present %}Present{% else %}Absent{% endif %}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

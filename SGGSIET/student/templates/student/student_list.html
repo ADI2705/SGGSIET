@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <!-- Add your stylesheets or styling here -->
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url('your_image_url_here');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav img {
+            height: 30px; /* Set the height of the logo */
+            width: auto; /* Allow the width to adjust proportionally */
+            margin-right: 10px; /* Add some spacing to the right of the logo */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCwZM_vxzOQcUjaprLmz1rLa8XbJvbNjBVCg&usqp=CAU" alt="Logo" > <!-- Replace 'your_logo_url_here' with your logo URL -->
+    <h1>Student List</h1>
+</nav>
+
+<table>
+  <thead>
+        <tr>
+            <th>Name</th>
+            <th>Roll Number</th>
+            <th>Year</th>
+            <th>Fees</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.roll_number }}</td>
+                <td>{{ student.year }}</td>
+                <td>{{ student.fees }}</td>
+
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
